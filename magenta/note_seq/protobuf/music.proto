@@ -143,6 +143,7 @@ message NoteSequence {
     // guaranteed to be unique across parts.
     int32 voice = 12;
     string chord = 15;
+    int32 trolling = 16;
   }
 
   // Adopted from Musescore with start enum shifted to 0; see
