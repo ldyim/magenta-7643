@@ -23,7 +23,7 @@ Example usage:
     --log=INFO
 """
 import sys
-sys.path.append('/home/ldyim568/magenta/')
+sys.path.append('/home/ldyim568/temp/magenta/')
 
 import hashlib
 import os
