@@ -141,7 +141,7 @@ message NoteSequence {
     // Alto, Tenor, Bass).
     // Note that while voices indexes must be unique within a part, they are not
     // guaranteed to be unique across parts.
-    // int32 voice = 12;
+    int32 voice = 12;
     string chord = 15;
     
   }
