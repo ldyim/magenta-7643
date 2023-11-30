@@ -131,7 +131,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
     current_index = 0
 
     for midi_note in midi_instrument.notes:
-      chord = [0] * 12
+      chord = ["0"] * 12
       # need current_chord to be an array that contains a one hot encoding where the index of the 1 
       # is the note in the chord that is being played at the same time as the current midi note
       # if no note is being played at the same time, then current_chord is an array of 0s
@@ -144,7 +144,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
       while i < len(chord_midi_data.instruments[0].notes) and chord_midi_data.instruments[0].notes[i].start < midi_note.end:
         # if the note is in the chord, then set the corresponding index to 1
         if chord_midi_data.instruments[0].notes[i].pitch in midi_instrument.notes:
-          chord[chord_midi_data.instruments[0].notes[i].pitch % 12] = 1
+          chord[chord_midi_data.instruments[0].notes[i].pitch % 12] = "1"
         i += 1
 
 
@@ -169,6 +169,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
 
   for program, instrument, is_drum, midi_note, chord in midi_notes:
     note = sequence.notes.add()
+    note.chord = str("".join(chord))
     note.instrument = instrument
     note.program = program
     note.start_time = midi_note.start
@@ -176,7 +177,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
     note.pitch = midi_note.pitch
     note.velocity = midi_note.velocity
     note.is_drum = is_drum
-    note.chord = str("".join(chord))
+    
 
   for program, instrument, is_drum, midi_pitch_bend in midi_pitch_bends:
     pitch_bend = sequence.pitch_bends.add()
