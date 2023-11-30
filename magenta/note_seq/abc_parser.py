@@ -21,8 +21,8 @@ import fractions
 import re
 
 from absl import logging
-from note_seq import constants
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import constants
+from magenta.note_seq.protobuf import music_pb2
 
 
 Fraction = fractions.Fraction
