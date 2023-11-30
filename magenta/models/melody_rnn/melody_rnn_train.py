@@ -15,7 +15,8 @@
 """Train and evaluate a melody RNN model."""
 
 import os
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import magenta
 from magenta.models.melody_rnn import melody_rnn_config_flags
 from magenta.models.shared import events_rnn_graph
