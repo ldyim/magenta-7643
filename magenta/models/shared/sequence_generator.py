@@ -16,12 +16,13 @@
 
 Provides a uniform interface for interacting with generators for any model.
 """
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import abc
 import os
 import tempfile
 
-from note_seq.protobuf import generator_pb2
+from magenta.note_seq.protobuf import generator_pb2
 import tensorflow.compat.v1 as tf
 
 

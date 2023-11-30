@@ -17,7 +17,8 @@
 import abc
 import bisect
 import copy
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import tensorflow.compat.v1 as tf
 
 

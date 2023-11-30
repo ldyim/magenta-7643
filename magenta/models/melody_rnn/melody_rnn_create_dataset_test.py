@@ -21,7 +21,7 @@ from magenta.models.melody_rnn import melody_rnn_pipeline
 from magenta.pipelines import melody_pipelines
 from magenta.pipelines import note_sequence_pipelines
 from magenta.pipelines import pipelines_common
-import note_seq
+import note_seq as note_seq
 import note_seq.testing_lib
 import tensorflow.compat.v1 as tf
 

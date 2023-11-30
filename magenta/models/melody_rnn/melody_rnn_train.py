@@ -16,8 +16,8 @@
 
 import os
 import sys
-
 sys.path.append('/home/echen0918316/magenta/')
+
 import magenta
 from magenta.models.melody_rnn import melody_rnn_config_flags
 from magenta.models.shared import events_rnn_graph

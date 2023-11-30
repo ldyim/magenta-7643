@@ -13,13 +13,14 @@
 # limitations under the License.
 
 """Pipeline to create MelodyRNN dataset."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.pipelines import dag_pipeline
 from magenta.pipelines import melody_pipelines
 from magenta.pipelines import note_sequence_pipelines
 from magenta.pipelines import pipeline
 from magenta.pipelines import pipelines_common
-import note_seq
+import magenta.note_seq as note_seq
 import tensorflow.compat.v1 as tf
 
 
