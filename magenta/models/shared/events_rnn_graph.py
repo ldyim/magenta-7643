@@ -14,10 +14,11 @@
 
 """Provides function to build an event sequence RNN model's graph."""
 import numbers
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import magenta.common
 from magenta.contrib import rnn as contrib_rnn
-import note_seq
+import magenta.note_seq
 import numpy as np
 import tensorflow.compat.v1 as tf
 import tf_slim

@@ -16,7 +16,8 @@
 
 import os
 import tempfile
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.models.shared import sequence_generator_bundle
 import tensorflow.compat.v1 as tf
 import tf_slim

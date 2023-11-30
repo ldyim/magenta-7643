@@ -17,13 +17,14 @@
 import collections
 import copy
 import functools
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.common import beam_search
 from magenta.common import state_util
 from magenta.contrib import training as contrib_training
 from magenta.models.shared import events_rnn_graph
 from magenta.models.shared import model
-import note_seq
+import magenta.note_seq
 import numpy as np
 import tensorflow.compat.v1 as tf
 
