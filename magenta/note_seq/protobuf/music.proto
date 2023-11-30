@@ -142,7 +142,7 @@ message NoteSequence {
     // Note that while voices indexes must be unique within a part, they are not
     // guaranteed to be unique across parts.
     int32 voice = 12;
-    string chord = 15;
+    string chord = 24;
   }
 
   // Adopted from Musescore with start enum shifted to 0; see

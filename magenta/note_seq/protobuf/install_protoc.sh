@@ -14,7 +14,7 @@
 
 #!/bin/bash
 # Install the .protoc compiler
-VERSION="21.2"
+VERSION="21.8"
 
 curl -o /tmp/protoc.zip -L "https://github.com/protocolbuffers/protobuf/releases/download/v${VERSION}/protoc-${VERSION}-${1}-x86_64.zip"
 

@@ -73,7 +73,8 @@ class NoteSequence(_message.Message):
         time: float
         def __init__(self, time: _Optional[float] = ..., key: _Optional[_Union[NoteSequence.KeySignature.Key, str]] = ..., mode: _Optional[_Union[NoteSequence.KeySignature.Mode, str]] = ...) -> None: ...
     class Note(_message.Message):
-        __slots__ = ["denominator", "end_time", "instrument", "is_drum", "numerator", "part", "pitch", "pitch_name", "program", "quantized_end_step", "quantized_start_step", "start_time", "velocity", "voice", "chord"]
+        __slots__ = ["chord", "denominator", "end_time", "instrument", "is_drum", "numerator", "part", "pitch", "pitch_name", "program", "quantized_end_step", "quantized_start_step", "start_time", "velocity", "voice"]
+        CHORD_FIELD_NUMBER: _ClassVar[int]
         DENOMINATOR_FIELD_NUMBER: _ClassVar[int]
         END_TIME_FIELD_NUMBER: _ClassVar[int]
         INSTRUMENT_FIELD_NUMBER: _ClassVar[int]
@@ -88,6 +89,7 @@ class NoteSequence(_message.Message):
         START_TIME_FIELD_NUMBER: _ClassVar[int]
         VELOCITY_FIELD_NUMBER: _ClassVar[int]
         VOICE_FIELD_NUMBER: _ClassVar[int]
+        chord: str
         denominator: int
         end_time: float
         instrument: int
@@ -102,9 +104,7 @@ class NoteSequence(_message.Message):
         start_time: float
         velocity: int
         voice: int
-        # chord field should be a one hot encoding of the notes in the chord. 
-        chord: [int] = [0] * 12
-        def __init__(self, pitch: _Optional[int] = ..., pitch_name: _Optional[_Union[NoteSequence.PitchName, str]] = ..., velocity: _Optional[int] = ..., start_time: _Optional[float] = ..., quantized_start_step: _Optional[int] = ..., end_time: _Optional[float] = ..., quantized_end_step: _Optional[int] = ..., numerator: _Optional[int] = ..., denominator: _Optional[int] = ..., instrument: _Optional[int] = ..., program: _Optional[int] = ..., is_drum: bool = ..., part: _Optional[int] = ..., voice: _Optional[int] = ...) -> None: ...
+        def __init__(self, pitch: _Optional[int] = ..., pitch_name: _Optional[_Union[NoteSequence.PitchName, str]] = ..., velocity: _Optional[int] = ..., start_time: _Optional[float] = ..., quantized_start_step: _Optional[int] = ..., end_time: _Optional[float] = ..., quantized_end_step: _Optional[int] = ..., numerator: _Optional[int] = ..., denominator: _Optional[int] = ..., instrument: _Optional[int] = ..., program: _Optional[int] = ..., is_drum: bool = ..., part: _Optional[int] = ..., voice: _Optional[int] = ..., chord: _Optional[str] = ...) -> None: ...
     class PartInfo(_message.Message):
         __slots__ = ["name", "part"]
         NAME_FIELD_NUMBER: _ClassVar[int]
