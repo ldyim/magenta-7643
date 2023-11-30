@@ -78,7 +78,16 @@ def get_padded_batch(file_list, batch_size, input_size, label_shape=None,
 
   length = tf.shape(sequence['inputs'])[0]
   input_tensors = [sequence['inputs'], sequence['labels'], length]
-
+  print("\n\n\n\nSEQ_LIB_INPUT:")
+  print("input_tensors type: ", type(input_tensors))
+  print("input_size: ", input_size)
+  print("inputs shape: ", input_tensors[0].shape)
+  print("first input shape: ", input_tensors[0][0].shape)
+  print("first input: ", input_tensors[0][0])
+  print("2nd input shape: ", input_tensors[0][1].shape)
+  print("3rd input shape: ", input_tensors[0][1].shape)
+  print("<--------END-------->\n\n\n\n")
+  return
   if shuffle:
     if num_enqueuing_threads < 2:
       raise ValueError(

@@ -218,6 +218,8 @@ def run_with_flags(generator):
 
 def main(unused_argv):
   """Saves bundle or runs generator based on flags."""
+  # print("\n<---------MAIN CALL----------\n>")
+
   tf.logging.set_verbosity(FLAGS.log)
 
   bundle = get_bundle()

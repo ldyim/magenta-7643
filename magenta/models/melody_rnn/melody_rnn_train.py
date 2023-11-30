@@ -15,7 +15,9 @@
 """Train and evaluate a melody RNN model."""
 
 import os
+import sys
 
+sys.path.append('/home/echen0918316/magenta/')
 import magenta
 from magenta.models.melody_rnn import melody_rnn_config_flags
 from magenta.models.shared import events_rnn_graph
@@ -63,7 +65,7 @@ tf.app.flags.DEFINE_string('log', 'INFO',
 
 def main(unused_argv):
   tf.logging.set_verbosity(FLAGS.log)
-
+  # print("\n<----------TRAIN MAIN------------->\n")
   if not FLAGS.run_dir:
     tf.logging.fatal('--run_dir required')
     return
@@ -78,6 +80,9 @@ def main(unused_argv):
   config = melody_rnn_config_flags.config_from_flags()
 
   mode = 'eval' if FLAGS.eval else 'train'
+  print("\n\n config: ", config, "\n\n")
+  print("dir(config):", dir(config), "\n\n")
+  import pdb; pdb.set_trace()
   build_graph_fn = events_rnn_graph.get_build_graph_fn(
       mode, config, sequence_example_file_paths)
 

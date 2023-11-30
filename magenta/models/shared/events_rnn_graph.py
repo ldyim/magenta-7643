@@ -14,7 +14,9 @@
 
 """Provides function to build an event sequence RNN model's graph."""
 import numbers
-
+import sys
+sys.path.append('/home/echen0918316/magenta')
+import magenta
 import magenta.common
 from magenta.contrib import rnn as contrib_rnn
 import note_seq
@@ -86,7 +88,7 @@ def get_build_graph_fn(mode, config, sequence_example_file_paths=None):
   if mode not in ('train', 'eval', 'generate'):
     raise ValueError("The mode parameter must be 'train', 'eval', "
                      "or 'generate'. The mode parameter was: %s" % mode)
-
+  print("\n\n\n\n\nIn build graph\n\n\n\n\n\n\n")
   hparams = config.hparams
   encoder_decoder = config.encoder_decoder
 
