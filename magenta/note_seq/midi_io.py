@@ -62,6 +62,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
   else:
     try:
       midi = pretty_midi.PrettyMIDI(io.BytesIO(midi_data))
+      chord_midi_data = pretty_midi.PrettyMIDI(io.BytesIO(chord_midi_data))
     except:
       raise MIDIConversionError('Midi decoding error %s: %s' %
                                 (sys.exc_info()[0], sys.exc_info()[1]))
