@@ -18,8 +18,8 @@ sys.path.append('/home/ldyim568/temp/magenta/')
 # new line here to import magenta
 from magenta import note_seq as note_seq
 
-from magenta.note_seq import parse_abc_tunebook
-from magenta.note_seq import parse_abc_tunebook_file
+from magenta.note_seq.abc_parser import parse_abc_tunebook
+from magenta.note_seq.abc_parser import parse_abc_tunebook_file
 # from note_seq.abc_parser import parse_abc_tunebook
 # from note_seq.abc_parser import parse_abc_tunebook_file
 
