@@ -13,6 +13,10 @@
 # limitations under the License.
 
 """Imports classes and utils into the top-level namespace."""
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+# new line here to import magenta
+from magenta import note_seq as note_seq
 
 from note_seq.abc_parser import parse_abc_tunebook
 from note_seq.abc_parser import parse_abc_tunebook_file
