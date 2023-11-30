@@ -22,7 +22,8 @@ Example usage:
     --output_file=/path/to/tfrecord/file \
     --log=INFO
 """
-
+import sys
+sys.path.append('/home/ldyim568/magenta/')
 
 import hashlib
 import os
