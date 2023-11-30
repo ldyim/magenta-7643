@@ -31,7 +31,7 @@ import magenta
 import magenta.noteseq as noteseq
 
 # change this import to use the version in the magenta/note_seq directory
-from magenta.noteseq import midi_io
+import magenta.noteseq.midi_io as midi_io
 from magenta.noteseq import musicxml_reader
 from magenta.noteseq import abc_parser
 from magenta.protobuf import music_pb2
