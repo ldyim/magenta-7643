@@ -13,10 +13,11 @@
 # limitations under the License.
 
 """Provides a class, defaults, and utils for Melody RNN model configuration."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.contrib import training as contrib_training
 from magenta.models.melody_rnn import melody_rnn_model
-import note_seq
+import magenta.note_seq as note_seq
 import tensorflow.compat.v1 as tf
 
 FLAGS = tf.app.flags.FLAGS
