@@ -108,7 +108,7 @@ def convert_files_chords(root_dir, sub_dir, writer, recursive=False):
       
       if full_file_path.lower().endswith('chords.mid'):
         continue
-      if files_in_dir[0].lower.endswith('chords.mid'):
+      if files_in_dir[0].lower().endswith('chords.mid'):
         chord_file = files_in_dir[0]
         melody_file = files_in_dir[1]
       else:
