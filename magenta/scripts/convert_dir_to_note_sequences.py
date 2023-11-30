@@ -56,6 +56,7 @@ tf.app.flags.DEFINE_string('log', 'INFO',
                            'DEBUG, INFO, WARN, ERROR, or FATAL.')
 
 
+
 def generate_note_sequence_id(filename, collection_name, source_type):
   """Generates a unique ID for a sequence.
 
@@ -73,6 +74,64 @@ def generate_note_sequence_id(filename, collection_name, source_type):
   filename_fingerprint = hashlib.sha1(filename.encode('utf-8'))
   return '/id/%s/%s/%s' % (
       source_type.lower(), collection_name, filename_fingerprint.hexdigest())
+
+def convert_files_chords(root_dir, sub_dir, writer, recursive=False):
+  """Converts files.
+
+  Args:
+    root_dir: A string specifying a root directory.
+    sub_dir: A string specifying a path to a directory under `root_dir` in which
+        to convert contents.
+    writer: A TFRecord writer
+    recursive: A boolean specifying whether or not recursively convert files
+        contained in subdirectories of the specified directory.
+
+  Returns:
+    A map from the resulting Futures to the file paths being converted.
+  """
+  dir_to_convert = os.path.join(root_dir, sub_dir)
+  tf.logging.info("Converting files in '%s'.", dir_to_convert)
+  files_in_dir = tf.gfile.ListDirectory(os.path.join(dir_to_convert))
+  recurse_sub_dirs = []
+  written_count = 0
+  for file_in_dir in files_in_dir:
+    tf.logging.log_every_n(tf.logging.INFO, '%d files converted.',
+                           1000, written_count)
+    full_file_path = os.path.join(dir_to_convert, file_in_dir)
+    
+    #### midi file conversion, should worry about it
+    if (full_file_path.lower().endswith('.mid') or
+        full_file_path.lower().endswith('.midi')):
+      
+      chord_file = ""
+      melody_file = ""
+      
+      if files_in_dir[0].lower.endswith('chords.mid'):
+        chord_file = files_in_dir[0]
+        melody_file = files_in_dir[1]
+      else:
+        chord_file = files_in_dir[1]
+        melody_file = files_in_dir[0]
+      full_file_path = os.path.join(dir_to_convert, melody_file)
+      chord_file_path = os.path.join(dir_to_convert, chord_file)
+      try:
+        #sequence = convert_midi(root_dir, sub_dir, full_file_path)
+        sequence = convert_midi_chords(root_dir, sub_dir, full_file_path, chord_file_path)
+      except Exception as exc:  # pylint: disable=broad-except
+        tf.logging.fatal('%r generated an exception: %s', full_file_path, exc)
+        continue
+      if sequence:
+        writer.write(sequence.SerializeToString())
+    else:
+      if recursive and tf.gfile.IsDirectory(full_file_path):
+        recurse_sub_dirs.append(os.path.join(sub_dir, file_in_dir))
+      else:
+        tf.logging.warning(
+            'Unable to find a converter for file %s', full_file_path)
+
+  for recurse_sub_dir in recurse_sub_dirs:
+    convert_files(root_dir, recurse_sub_dir, writer, recursive)
+
 
 
 def convert_files(root_dir, sub_dir, writer, recursive=False):
@@ -98,6 +157,8 @@ def convert_files(root_dir, sub_dir, writer, recursive=False):
     tf.logging.log_every_n(tf.logging.INFO, '%d files converted.',
                            1000, written_count)
     full_file_path = os.path.join(dir_to_convert, file_in_dir)
+    
+    #### midi file conversion, should worry about it
     if (full_file_path.lower().endswith('.mid') or
         full_file_path.lower().endswith('.midi')):
       try:
@@ -107,6 +168,8 @@ def convert_files(root_dir, sub_dir, writer, recursive=False):
         continue
       if sequence:
         writer.write(sequence.SerializeToString())
+        
+    #### XML logic, can ignore
     elif (full_file_path.lower().endswith('.xml') or
           full_file_path.lower().endswith('.mxl')):
       try:
@@ -151,6 +214,33 @@ def convert_midi(root_dir, sub_dir, full_file_path):
   try:
     sequence = midi_io.midi_to_sequence_proto(
         tf.gfile.GFile(full_file_path, 'rb').read())
+  except midi_io.MIDIConversionError as e:
+    tf.logging.warning(
+        'Could not parse MIDI file %s. It will be skipped. Error was: %s',
+        full_file_path, e)
+    return None
+  sequence.collection_name = os.path.basename(root_dir)
+  sequence.filename = os.path.join(sub_dir, os.path.basename(full_file_path))
+  sequence.id = generate_note_sequence_id(
+      sequence.filename, sequence.collection_name, 'midi')
+  tf.logging.info('Converted MIDI file %s.', full_file_path)
+  return sequence
+
+def convert_midi_chords(root_dir, sub_dir, full_file_path, full_file_path_chords):
+  """Converts a midi file to a sequence proto.
+
+  Args:
+    root_dir: A string specifying the root directory for the files being
+        converted.
+    sub_dir: The directory being converted currently.
+    full_file_path: the full path to the file to convert.
+
+  Returns:
+    Either a NoteSequence proto or None if the file could not be converted.
+  """
+  try:
+    sequence = midi_io.midi_to_sequence_proto_with_chords(
+        tf.gfile.GFile(full_file_path, 'rb').read(),  tf.gfile.GFile(full_file_path_chords, 'rb').read())
   except midi_io.MIDIConversionError as e:
     tf.logging.warning(
         'Could not parse MIDI file %s. It will be skipped. Error was: %s',
@@ -257,6 +347,7 @@ def main(unused_argv):
     return
 
   input_dir = os.path.expanduser(FLAGS.input_dir)
+  
   output_file = os.path.expanduser(FLAGS.output_file)
   output_dir = os.path.dirname(output_file)
 

@@ -518,6 +518,11 @@ def midi_to_sequence_proto(midi_data):
   return midi_to_note_sequence(midi_data)
 
 
+def midi_to_sequence_proto_with_chords(midi_data, chord_data):
+  """Renamed to midi_to_note_sequence."""
+  return midi_to_note_sequence_with_chords(midi_data, chord_data)
+
+
 def sequence_proto_to_pretty_midi(sequence,
                                   drop_events_n_seconds_after_last_note=None):
   """Renamed to note_sequence_to_pretty_midi."""
