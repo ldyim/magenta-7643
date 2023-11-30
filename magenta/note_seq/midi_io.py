@@ -72,14 +72,15 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
                                 (sys.exc_info()[0], sys.exc_info()[1]))
   # pylint: enable=bare-except
 
-  sequence = music_pb2.NoteSequence()
-
+  #sequence = music_pb2.NoteSequence()
+  sequence = NoteSequence()
   # Populate header.
   sequence.ticks_per_quarter = midi.resolution
-  sequence.source_info.parser = music_pb2.NoteSequence.SourceInfo.PRETTY_MIDI
-  sequence.source_info.encoding_type = (
-      music_pb2.NoteSequence.SourceInfo.MIDI)
-
+  #sequence.source_info.parser = music_pb2.NoteSequence.SourceInfo.PRETTY_MIDI
+  sequence.source_info.parser = NoteSequence.SourceInfo.PRETTY_MIDI
+  #sequence.source_info.encoding_type = (
+  #    music_pb2.NoteSequence.SourceInfo.MIDI)
+  sequence.source_info.encoding_type = ( NoteSequence.SourceInfo.MIDI)
   # Populate time signatures.
   for midi_time in midi.time_signature_changes:
     time_signature = sequence.time_signatures.add()
