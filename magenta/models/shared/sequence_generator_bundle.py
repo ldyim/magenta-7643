@@ -13,8 +13,9 @@
 # limitations under the License.
 
 """Utility functions for handling bundle files."""
-
-from note_seq.protobuf import generator_pb2
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq.protobuf import generator_pb2
 import tensorflow.compat.v1 as tf
 from google.protobuf import message
 
