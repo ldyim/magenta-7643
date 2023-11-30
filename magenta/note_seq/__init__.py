@@ -73,15 +73,25 @@ from note_seq.melody_encoder_decoder import MelodyOneHotEncoding
 from note_seq.melody_inference import infer_melody_for_sequence
 from note_seq.melody_inference import MelodyInferenceError
 
-from note_seq.midi_io import midi_file_to_note_sequence
-from note_seq.midi_io import midi_file_to_sequence_proto
-from note_seq.midi_io import midi_to_note_sequence
-from note_seq.midi_io import midi_to_sequence_proto
-from note_seq.midi_io import MIDIConversionError
-from note_seq.midi_io import note_sequence_to_midi_file
-from note_seq.midi_io import note_sequence_to_pretty_midi
-from note_seq.midi_io import sequence_proto_to_midi_file
-from note_seq.midi_io import sequence_proto_to_pretty_midi
+from magenta.note_seq.midi_io import midi_file_to_note_sequence
+from magenta.note_seq.midi_io import midi_file_to_sequence_proto
+from magenta.note_seq.midi_io import midi_to_note_sequence
+from magenta.note_seq.midi_io import midi_to_sequence_proto
+from magenta.note_seq.midi_io import MIDIConversionError
+from magenta.note_seq.midi_io import note_sequence_to_midi_file
+from magenta.note_seq.midi_io import note_sequence_to_pretty_midi
+from magenta.note_seq.midi_io import sequence_proto_to_midi_file
+from magenta.note_seq.midi_io import sequence_proto_to_pretty_midi
+
+# from note_seq.midi_io import midi_file_to_note_sequence
+# from note_seq.midi_io import midi_file_to_sequence_proto
+# from note_seq.midi_io import midi_to_note_sequence
+# from note_seq.midi_io import midi_to_sequence_proto
+# from note_seq.midi_io import MIDIConversionError
+# from note_seq.midi_io import note_sequence_to_midi_file
+# from note_seq.midi_io import note_sequence_to_pretty_midi
+# from note_seq.midi_io import sequence_proto_to_midi_file
+# from note_seq.midi_io import sequence_proto_to_pretty_midi
 
 from note_seq.midi_synth import fluidsynth
 from note_seq.midi_synth import synthesize
