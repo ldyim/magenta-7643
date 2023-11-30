@@ -170,7 +170,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
 
   for program, instrument, is_drum, midi_note, chord in midi_notes:
     note = sequence.notes.add()
-    print(dir(note))
+    
     note.chord = str("".join(chord))
     note.instrument = instrument
     note.program = program
