@@ -33,7 +33,8 @@ type signature: Something that can be returned from Pipeline's `output_type`
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import itertools
 
 from magenta.pipelines import pipeline

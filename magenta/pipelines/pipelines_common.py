@@ -16,7 +16,8 @@
 
 import numbers
 import random
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.pipelines import pipeline
 from magenta.pipelines import statistics
 import numpy as np

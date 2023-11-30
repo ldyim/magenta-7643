@@ -13,20 +13,21 @@
 # limitations under the License.
 
 """Pipeline to create Performance dataset."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.pipelines import dag_pipeline
 from magenta.pipelines import note_sequence_pipelines
 from magenta.pipelines import pipeline
 from magenta.pipelines import pipelines_common
 from magenta.pipelines import statistics
-from note_seq import MetricPerformance
-from note_seq import Performance
-from note_seq import sequences_lib
-from note_seq.performance_lib import BasePerformance
-from note_seq.performance_lib import NotePerformance
-from note_seq.performance_lib import TooManyDurationStepsError
-from note_seq.performance_lib import TooManyTimeShiftStepsError
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import MetricPerformance
+from magenta.note_seq import Performance
+from magenta.note_seq import sequences_lib
+from magenta.note_seq.performance_lib import BasePerformance
+from magenta.note_seq.performance_lib import NotePerformance
+from magenta.note_seq.performance_lib import TooManyDurationStepsError
+from magenta.note_seq.performance_lib import TooManyTimeShiftStepsError
+from magenta.note_seq.protobuf import music_pb2
 import tensorflow.compat.v1 as tf
 
 

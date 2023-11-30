@@ -13,7 +13,8 @@
 # limitations under the License.
 
 """Pipeline for event sequences."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.pipelines import pipeline
 from magenta.pipelines import pipelines_common
 import tensorflow.compat.v1 as tf
