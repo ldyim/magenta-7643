@@ -115,8 +115,10 @@ from note_seq.pianoroll_encoder_decoder import PianorollEncoderDecoder
 
 from note_seq.pianoroll_lib import PianorollSequence
 
-from note_seq.protobuf import music_pb2
-from note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
+from magenta.note_seq.protobuf import music_pb2
+from magenta.note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
+# from note_seq.protobuf import music_pb2
+# from note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
 
 from note_seq.sequences_lib import apply_sustain_control_changes
 from note_seq.sequences_lib import BadTimeSignatureError
