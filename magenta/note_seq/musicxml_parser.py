@@ -16,12 +16,13 @@
 
 Simple MusicXML parser used to convert MusicXML into NoteSequence.
 """
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import fractions
 import xml.etree.ElementTree as ET
 import zipfile
 
-from note_seq import constants
+from magenta.note_seq import constants
 
 Fraction = fractions.Fraction
 

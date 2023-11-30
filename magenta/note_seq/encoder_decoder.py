@@ -45,8 +45,9 @@ encoding includes binary counters for timekeeping.
 
 import abc
 import numbers
-
-from note_seq import constants
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import constants
 import numpy as np
 
 DEFAULT_STEPS_PER_BAR = constants.DEFAULT_STEPS_PER_BAR

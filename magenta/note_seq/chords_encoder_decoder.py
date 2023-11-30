@@ -23,10 +23,11 @@ one-hot encoding for ChordProgression events, i.e. chord symbol strings. This
 encoding has 49 classes, all 12 major/minor/augmented/diminished triads plus
 "no chord".
 """
-
-from note_seq import chord_symbols_lib
-from note_seq import constants
-from note_seq import encoder_decoder
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import chord_symbols_lib
+from magenta.note_seq import constants
+from magenta.note_seq import encoder_decoder
 
 NOTES_PER_OCTAVE = constants.NOTES_PER_OCTAVE
 NO_CHORD = constants.NO_CHORD

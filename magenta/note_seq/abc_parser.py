@@ -16,7 +16,8 @@
 
 http://abcnotation.com/wiki/abc:standard:v2.1
 """
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import fractions
 import re
 

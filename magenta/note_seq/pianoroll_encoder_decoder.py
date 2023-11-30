@@ -13,8 +13,9 @@
 # limitations under the License.
 
 """Classes for converting between pianoroll input and model input/output."""
-
-from note_seq import encoder_decoder
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import encoder_decoder
 import numpy as np
 
 

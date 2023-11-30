@@ -20,15 +20,16 @@ quantized NoteSequence object, aligned with already-extracted melodies.
 Use ChordProgression.to_sequence to write a chord progression to a
 NoteSequence proto, encoding the chords as text annotations.
 """
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import abc
 import bisect
 
-from note_seq import chord_symbols_lib
-from note_seq import constants
-from note_seq import events_lib
-from note_seq import sequences_lib
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import chord_symbols_lib
+from magenta.note_seq import constants
+from magenta.note_seq import events_lib
+from magenta.note_seq import sequences_lib
+from magenta.note_seq.protobuf import music_pb2
 
 STANDARD_PPQ = constants.STANDARD_PPQ
 NOTES_PER_OCTAVE = constants.NOTES_PER_OCTAVE

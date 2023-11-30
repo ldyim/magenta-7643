@@ -40,11 +40,12 @@ After that, some operations leave some of the components unexamined, e.g.
 transposition only modifies the root and bass, leaving the chord kind and scale
 degree modifications unchanged.
 """
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import itertools
 import re
 
-from note_seq import constants
+from magenta.note_seq import constants
 
 # Chord quality enum.
 CHORD_QUALITY_MAJOR = 0

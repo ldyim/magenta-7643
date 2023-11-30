@@ -13,9 +13,10 @@
 # limitations under the License.
 
 """Tests for drums_encoder_decoder."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 from absl.testing import absltest
-from note_seq import drums_encoder_decoder
+from magenta.note_seq import drums_encoder_decoder
 
 
 DRUMS = lambda *args: frozenset(args)

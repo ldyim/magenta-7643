@@ -22,12 +22,13 @@ KeyMelodyEncoderDecoder is an encoder_decoder.EventSequenceEncoderDecoder that
 specifies an encoding of Melody objects into input vectors and output labels for
 use by melody models.
 """
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import collections
 
-from note_seq import constants
-from note_seq import encoder_decoder
-from note_seq import melodies_lib
+from magenta.note_seq import constants
+from magenta.note_seq import encoder_decoder
+from magenta.note_seq import melodies_lib
 
 NUM_SPECIAL_MELODY_EVENTS = constants.NUM_SPECIAL_MELODY_EVENTS
 MELODY_NOTE_OFF = constants.MELODY_NOTE_OFF

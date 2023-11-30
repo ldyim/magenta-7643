@@ -21,8 +21,9 @@ interface.
 
 import abc
 import copy
-
-from note_seq import constants
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import constants
 
 DEFAULT_STEPS_PER_BAR = constants.DEFAULT_STEPS_PER_BAR
 DEFAULT_STEPS_PER_QUARTER = constants.DEFAULT_STEPS_PER_QUARTER

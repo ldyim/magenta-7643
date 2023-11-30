@@ -15,8 +15,9 @@
 """Import NoteSequences from MusicNet."""
 
 import io
-
-from note_seq.protobuf import music_pb2
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq.protobuf import music_pb2
 import numpy as np
 
 

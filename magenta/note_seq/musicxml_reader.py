@@ -16,9 +16,10 @@
 
 Input wrappers for converting MusicXML into NoteSequence.
 """
-
-from note_seq import musicxml_parser
-from note_seq.protobuf import music_pb2
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import musicxml_parser
+from magenta.note_seq.protobuf import music_pb2
 
 # Shortcut to CHORD_SYMBOL annotation type.
 CHORD_SYMBOL = music_pb2.NoteSequence.TextAnnotation.CHORD_SYMBOL

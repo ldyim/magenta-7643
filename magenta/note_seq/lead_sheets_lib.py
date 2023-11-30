@@ -13,15 +13,16 @@
 # limitations under the License.
 
 """Utility functions for working with lead sheets."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import copy
 import itertools
 
-from note_seq import chords_lib
-from note_seq import constants
-from note_seq import events_lib
-from note_seq import melodies_lib
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import chords_lib
+from magenta.note_seq import constants
+from magenta.note_seq import events_lib
+from magenta.note_seq import melodies_lib
+from magenta.note_seq.protobuf import music_pb2
 
 # Constants.
 DEFAULT_STEPS_PER_BAR = constants.DEFAULT_STEPS_PER_BAR

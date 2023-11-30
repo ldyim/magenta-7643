@@ -15,11 +15,12 @@
 """Classes for converting between performance input and model input/output."""
 
 import math
-
-from note_seq import encoder_decoder
-from note_seq import performance_lib
-from note_seq.encoder_decoder import EventSequenceEncoderDecoder
-from note_seq.performance_lib import PerformanceEvent
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import encoder_decoder
+from magenta.note_seq import performance_lib
+from magenta.note_seq.encoder_decoder import EventSequenceEncoderDecoder
+from magenta.note_seq.performance_lib import PerformanceEvent
 import numpy as np
 
 # Number of floats used to encode NOTE_ON and NOTE_OFF events, using modulo-12

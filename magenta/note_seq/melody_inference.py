@@ -13,11 +13,12 @@
 # limitations under the License.
 
 """Infer melody from polyphonic NoteSequence."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import bisect
 
-from note_seq import constants
-from note_seq import sequences_lib
+from magenta.note_seq import constants
+from magenta.note_seq import sequences_lib
 import numpy as np
 import scipy.linalg
 

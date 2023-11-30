@@ -13,8 +13,9 @@
 # limitations under the License.
 
 """MIDI audio synthesis."""
-
-from note_seq import midi_io
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import midi_io
 import numpy as np
 
 

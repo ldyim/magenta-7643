@@ -13,7 +13,8 @@
 # limitations under the License.
 
 """Defines sequence of notes objects for creating datasets."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import collections
 import copy
 import itertools
@@ -22,9 +23,9 @@ import operator
 import random
 
 from absl import logging
-from note_seq import chord_symbols_lib
-from note_seq import constants
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import chord_symbols_lib
+from magenta.note_seq import constants
+from magenta.note_seq.protobuf import music_pb2
 import numpy as np
 import pretty_midi
 

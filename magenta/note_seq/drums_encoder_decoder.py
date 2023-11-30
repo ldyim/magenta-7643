@@ -13,8 +13,9 @@
 # limitations under the License.
 
 """Classes for converting between drum tracks and models inputs/outputs."""
-
-from note_seq import encoder_decoder
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+from magenta.note_seq import encoder_decoder
 
 # Default list of 9 drum types, where each type is represented by a list of
 # MIDI pitches for drum sounds belonging to that type. This default list

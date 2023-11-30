@@ -20,12 +20,14 @@ NoteSequence proto.
 Use Melody.to_sequence to write a melody to a NoteSequence proto. Then use
 midi_io.sequence_proto_to_midi_file to write that NoteSequence to a midi file.
 """
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 
-from note_seq import constants
-from note_seq import events_lib
-from note_seq import midi_io
-from note_seq import sequences_lib
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import constants
+from magenta.note_seq import events_lib
+from magenta.note_seq import midi_io
+from magenta.note_seq import sequences_lib
+from magenta.note_seq.protobuf import music_pb2
 import numpy as np
 
 MELODY_NOTE_OFF = constants.MELODY_NOTE_OFF

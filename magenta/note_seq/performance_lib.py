@@ -13,17 +13,18 @@
 # limitations under the License.
 
 """Utility functions for working with polyphonic performances."""
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import abc
 import collections
 import math
 
 from absl import logging
 import attr
-from note_seq import constants
-from note_seq import events_lib
-from note_seq import sequences_lib
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import constants
+from magenta.note_seq import events_lib
+from magenta.note_seq import sequences_lib
+from magenta.note_seq.protobuf import music_pb2
 
 MAX_MIDI_PITCH = constants.MAX_MIDI_PITCH
 MIN_MIDI_PITCH = constants.MIN_MIDI_PITCH
