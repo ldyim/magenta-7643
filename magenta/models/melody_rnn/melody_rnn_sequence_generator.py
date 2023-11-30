@@ -20,7 +20,7 @@ sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.models.melody_rnn import melody_rnn_model
 from magenta.models.shared import sequence_generator
 from magenta.pipelines import melody_pipelines
-import magenta.note_seq
+import magenta.note_seq as note_seq
 
 
 class MelodyRnnSequenceGenerator(sequence_generator.BaseSequenceGenerator):

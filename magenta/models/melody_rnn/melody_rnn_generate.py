@@ -23,7 +23,7 @@ from magenta.models.melody_rnn import melody_rnn_model
 from magenta.models.melody_rnn import melody_rnn_sequence_generator
 from magenta.models.shared import sequence_generator
 from magenta.models.shared import sequence_generator_bundle
-import magenta.note_seq
+import magenta.note_seq as note_seq
 from magenta.note_seq.protobuf import generator_pb2
 from magenta.note_seq.protobuf import music_pb2
 import tensorflow.compat.v1 as tf
