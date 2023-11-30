@@ -158,6 +158,8 @@ def convert_files(root_dir, sub_dir, writer, recursive=False):
                            1000, written_count)
     full_file_path = os.path.join(dir_to_convert, file_in_dir)
     
+    if full_file_path.lower().endswith('chords.mid'):
+        continue
     #### midi file conversion, should worry about it
     if (full_file_path.lower().endswith('.mid') or
         full_file_path.lower().endswith('.midi')):
@@ -251,6 +253,7 @@ def convert_midi_chords(root_dir, sub_dir, full_file_path, full_file_path_chords
   sequence.id = generate_note_sequence_id(
       sequence.filename, sequence.collection_name, 'midi')
   tf.logging.info('Converted MIDI file %s.', full_file_path)
+  tf.logging.info('With chords MIDI file %s.', full_file_path_chords)
   return sequence
 
 
