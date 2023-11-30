@@ -106,6 +106,8 @@ def convert_files_chords(root_dir, sub_dir, writer, recursive=False):
       chord_file = ""
       melody_file = ""
       
+      if full_file_path.lower().endswith('chords.mid'):
+        continue
       if files_in_dir[0].lower.endswith('chords.mid'):
         chord_file = files_in_dir[0]
         melody_file = files_in_dir[1]
@@ -130,7 +132,7 @@ def convert_files_chords(root_dir, sub_dir, writer, recursive=False):
             'Unable to find a converter for file %s', full_file_path)
 
   for recurse_sub_dir in recurse_sub_dirs:
-    convert_files(root_dir, recurse_sub_dir, writer, recursive)
+    convert_files_chords(root_dir, recurse_sub_dir, writer, recursive)
 
 
 
@@ -336,7 +338,7 @@ def convert_directory(root_dir, output_file, recursive=False):
         contained in subdirectories of the specified directory.
   """
   with tf.io.TFRecordWriter(output_file) as writer:
-    convert_files(root_dir, '', writer, recursive)
+    convert_files_chords(root_dir, '', writer, recursive)
 
 
 def main(unused_argv):
