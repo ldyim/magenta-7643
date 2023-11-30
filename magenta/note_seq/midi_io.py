@@ -176,7 +176,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
     note.pitch = midi_note.pitch
     note.velocity = midi_note.velocity
     note.is_drum = is_drum
-    note.chord = chord
+    note.chord = "".join(chord)
 
   for program, instrument, is_drum, midi_pitch_bend in midi_pitch_bends:
     pitch_bend = sequence.pitch_bends.add()
