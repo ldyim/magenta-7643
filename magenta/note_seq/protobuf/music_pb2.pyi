@@ -73,7 +73,7 @@ class NoteSequence(_message.Message):
         time: float
         def __init__(self, time: _Optional[float] = ..., key: _Optional[_Union[NoteSequence.KeySignature.Key, str]] = ..., mode: _Optional[_Union[NoteSequence.KeySignature.Mode, str]] = ...) -> None: ...
     class Note(_message.Message):
-        __slots__ = ["denominator", "end_time", "instrument", "is_drum", "numerator", "part", "pitch", "pitch_name", "program", "quantized_end_step", "quantized_start_step", "start_time", "velocity", "voice"]
+        __slots__ = ["denominator", "end_time", "instrument", "is_drum", "numerator", "part", "pitch", "pitch_name", "program", "quantized_end_step", "quantized_start_step", "start_time", "velocity", "voice", "chord"]
         DENOMINATOR_FIELD_NUMBER: _ClassVar[int]
         END_TIME_FIELD_NUMBER: _ClassVar[int]
         INSTRUMENT_FIELD_NUMBER: _ClassVar[int]
