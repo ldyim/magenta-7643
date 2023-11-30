@@ -20,11 +20,12 @@ import functools
 import io
 import os
 import urllib
-
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
 import bokeh
 import bokeh.plotting
 from IPython import display
-from note_seq import midi_synth
+from magenta.note_seq import midi_synth
 import numpy as np
 import pandas as pd
 from scipy.io import wavfile
