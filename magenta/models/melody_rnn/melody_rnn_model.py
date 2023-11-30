@@ -19,7 +19,7 @@ import sys
 sys.path.append('/home/ldyim568/temp/magenta/')
 from magenta.contrib import training as contrib_training
 from magenta.models.shared import events_rnn_model
-import magenta.note_seq
+import magenta.note_seq as note_seq
 from magenta.note_seq.protobuf import generator_pb2
 
 DEFAULT_MIN_NOTE = 48
