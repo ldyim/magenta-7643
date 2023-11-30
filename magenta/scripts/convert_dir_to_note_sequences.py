@@ -28,6 +28,7 @@ sys.path.append('/home/ldyim568/temp/magenta/')
 import hashlib
 import os
 import magenta
+import magenta.noteseq as noteseq
 
 # change this import to use the version in the magenta/note_seq directory
 from magenta.noteseq import midi_io
