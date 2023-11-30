@@ -30,9 +30,9 @@ import os
 import magenta
 
 # change this import to use the version in the magenta/note_seq directory
-from magenta.note_seq import midi_io
-from magenta.note_seq import musicxml_reader
-from magenta.note_seq import abc_parser
+from magenta.noteseq import midi_io
+from magenta.noteseq import musicxml_reader
+from magenta.noteseq import abc_parser
 from magenta.protobuf import music_pb2
 import tensorflow.compat.v1 as tf
 
