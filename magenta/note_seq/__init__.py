@@ -18,60 +18,117 @@ sys.path.append('/home/ldyim568/temp/magenta/')
 # new line here to import magenta
 from magenta import note_seq as note_seq
 
-from note_seq.abc_parser import parse_abc_tunebook
-from note_seq.abc_parser import parse_abc_tunebook_file
+from magenta.note_seq import parse_abc_tunebook
+from magenta.note_seq import parse_abc_tunebook_file
+# from note_seq.abc_parser import parse_abc_tunebook
+# from note_seq.abc_parser import parse_abc_tunebook_file
 
-import note_seq.audio_io
+# import note_seq.audio_io
+from magenta.note_seq import audio_io
 
-from note_seq.chord_inference import ChordInferenceError
-from note_seq.chord_inference import infer_chords_for_sequence
 
-from note_seq.chord_symbols_lib import chord_symbol_bass
-from note_seq.chord_symbols_lib import chord_symbol_pitches
-from note_seq.chord_symbols_lib import chord_symbol_quality
-from note_seq.chord_symbols_lib import chord_symbol_root
-from note_seq.chord_symbols_lib import ChordSymbolError
-from note_seq.chord_symbols_lib import pitches_to_chord_symbol
-from note_seq.chord_symbols_lib import transpose_chord_symbol
+# from note_seq.chord_inference import ChordInferenceError
+# from note_seq.chord_inference import infer_chords_for_sequence
+from magenta.note_seq.chord_inference import ChordInferenceError
+from magenta.note_seq.chord_inference import infer_chords_for_sequence
 
-from note_seq.chords_encoder_decoder import ChordEncodingError
-from note_seq.chords_encoder_decoder import MajorMinorChordOneHotEncoding
-from note_seq.chords_encoder_decoder import PitchChordsEncoderDecoder
-from note_seq.chords_encoder_decoder import TriadChordOneHotEncoding
 
-from note_seq.chords_lib import BasicChordRenderer
-from note_seq.chords_lib import ChordProgression
+# from note_seq.chord_symbols_lib import chord_symbol_bass
+# from note_seq.chord_symbols_lib import chord_symbol_pitches
+# from note_seq.chord_symbols_lib import chord_symbol_quality
+# from note_seq.chord_symbols_lib import chord_symbol_root
+# from note_seq.chord_symbols_lib import ChordSymbolError
+# from note_seq.chord_symbols_lib import pitches_to_chord_symbol
+# from note_seq.chord_symbols_lib import transpose_chord_symbol
 
-from note_seq.constants import *  # pylint: disable=wildcard-import
+from magenta.note_seq.chord_symbols_lib import chord_symbol_bass
+from magenta.note_seq.chord_symbols_lib import chord_symbol_pitches
+from magenta.note_seq.chord_symbols_lib import chord_symbol_quality
+from magenta.note_seq.chord_symbols_lib import chord_symbol_root
+from magenta.note_seq.chord_symbols_lib import ChordSymbolError
+from magenta.note_seq.chord_symbols_lib import pitches_to_chord_symbol
+from magenta.note_seq.chord_symbols_lib import transpose_chord_symbol
 
-from note_seq.drums_encoder_decoder import MultiDrumOneHotEncoding
+# from note_seq.chords_encoder_decoder import ChordEncodingError
+# from note_seq.chords_encoder_decoder import MajorMinorChordOneHotEncoding
+# from note_seq.chords_encoder_decoder import PitchChordsEncoderDecoder
+# from note_seq.chords_encoder_decoder import TriadChordOneHotEncoding
+from magenta.note_seq.chords_encoder_decoder import ChordEncodingError
+from magenta.note_seq.chords_encoder_decoder import MajorMinorChordOneHotEncoding
+from magenta.note_seq.chords_encoder_decoder import PitchChordsEncoderDecoder
+from magenta.note_seq.chords_encoder_decoder import TriadChordOneHotEncoding
 
-from note_seq.drums_lib import DrumTrack
-from note_seq.drums_lib import midi_file_to_drum_track
 
-from note_seq.encoder_decoder import ConditionalEventSequenceEncoderDecoder
-from note_seq.encoder_decoder import EventSequenceEncoderDecoder
-from note_seq.encoder_decoder import LookbackEventSequenceEncoderDecoder
-from note_seq.encoder_decoder import MultipleEventSequenceEncoder
-from note_seq.encoder_decoder import OneHotEncoding
-from note_seq.encoder_decoder import OneHotEventSequenceEncoderDecoder
-from note_seq.encoder_decoder import OneHotIndexEventSequenceEncoderDecoder
-from note_seq.encoder_decoder import OptionalEventSequenceEncoder
+# from note_seq.chords_lib import BasicChordRenderer
+# from note_seq.chords_lib import ChordProgression
+from magenta.note_seq.chords_lib import BasicChordRenderer
+from magenta.note_seq.chords_lib import ChordProgression
 
-from note_seq.events_lib import NonIntegerStepsPerBarError
 
-from note_seq.lead_sheets_lib import LeadSheet
+# from note_seq.constants import *  # pylint: disable=wildcard-import
 
-from note_seq.melodies_lib import BadNoteError
-from note_seq.melodies_lib import Melody
-from note_seq.melodies_lib import midi_file_to_melody
-from note_seq.melodies_lib import PolyphonicMelodyError
+# from note_seq.drums_encoder_decoder import MultiDrumOneHotEncoding
 
-from note_seq.melody_encoder_decoder import KeyMelodyEncoderDecoder
-from note_seq.melody_encoder_decoder import MelodyOneHotEncoding
+from magenta.note_seq.constants import *  # pylint: disable=wildcard-import
 
-from note_seq.melody_inference import infer_melody_for_sequence
-from note_seq.melody_inference import MelodyInferenceError
+from magenta.note_seq.drums_encoder_decoder import MultiDrumOneHotEncoding
+
+
+
+# from note_seq.drums_lib import DrumTrack
+# from note_seq.drums_lib import midi_file_to_drum_track
+
+# from note_seq.encoder_decoder import ConditionalEventSequenceEncoderDecoder
+# from note_seq.encoder_decoder import EventSequenceEncoderDecoder
+# from note_seq.encoder_decoder import LookbackEventSequenceEncoderDecoder
+# from note_seq.encoder_decoder import MultipleEventSequenceEncoder
+# from note_seq.encoder_decoder import OneHotEncoding
+# from note_seq.encoder_decoder import OneHotEventSequenceEncoderDecoder
+# from note_seq.encoder_decoder import OneHotIndexEventSequenceEncoderDecoder
+# from note_seq.encoder_decoder import OptionalEventSequenceEncoder
+
+from magenta.note_seq.drums_lib import DrumTrack
+from magenta.note_seq.drums_lib import midi_file_to_drum_track
+
+from magenta.note_seq.encoder_decoder import ConditionalEventSequenceEncoderDecoder
+from magenta.note_seq.encoder_decoder import EventSequenceEncoderDecoder
+from magenta.note_seq.encoder_decoder import LookbackEventSequenceEncoderDecoder
+from magenta.note_seq.encoder_decoder import MultipleEventSequenceEncoder
+from magenta.note_seq.encoder_decoder import OneHotEncoding
+from magenta.note_seq.encoder_decoder import OneHotEventSequenceEncoderDecoder
+from magenta.note_seq.encoder_decoder import OneHotIndexEventSequenceEncoderDecoder
+from magenta.note_seq.encoder_decoder import OptionalEventSequenceEncoder
+
+
+
+# from note_seq.events_lib import NonIntegerStepsPerBarError
+
+from magenta.note_seq.events_lib import NonIntegerStepsPerBarError
+
+# from note_seq.lead_sheets_lib import LeadSheet
+
+# from note_seq.melodies_lib import BadNoteError
+# from note_seq.melodies_lib import Melody
+# from note_seq.melodies_lib import midi_file_to_melody
+# from note_seq.melodies_lib import PolyphonicMelodyError
+from magenta.note_seq.lead_sheets_lib import LeadSheet
+
+from magenta.note_seq.melodies_lib import BadNoteError
+from magenta.note_seq.melodies_lib import Melody
+from magenta.note_seq.melodies_lib import midi_file_to_melody
+from magenta.note_seq.melodies_lib import PolyphonicMelodyError
+from magenta.note_seq.melody_encoder_decoder import KeyMelodyEncoderDecoder
+from magenta.note_seq.melody_encoder_decoder import MelodyOneHotEncoding
+
+
+
+
+# from note_seq.melody_inference import infer_melody_for_sequence
+# from note_seq.melody_inference import MelodyInferenceError
+from magenta.note_seq.melody_inference import infer_melody_for_sequence
+from magenta.note_seq.melody_inference import MelodyInferenceError
+
+
 
 from magenta.note_seq.midi_io import midi_file_to_note_sequence
 from magenta.note_seq.midi_io import midi_file_to_sequence_proto
@@ -93,59 +150,115 @@ from magenta.note_seq.midi_io import sequence_proto_to_pretty_midi
 # from note_seq.midi_io import sequence_proto_to_midi_file
 # from note_seq.midi_io import sequence_proto_to_pretty_midi
 
-from note_seq.midi_synth import fluidsynth
-from note_seq.midi_synth import synthesize
+# from note_seq.midi_synth import fluidsynth
+# from note_seq.midi_synth import synthesize
 
-import note_seq.musicnet_io
+# import note_seq.musicnet_io
 
-from note_seq.musicxml_parser import MusicXMLDocument
-from note_seq.musicxml_parser import MusicXMLParseError
+# from note_seq.musicxml_parser import MusicXMLDocument
+# from note_seq.musicxml_parser import MusicXMLParseError
 
-from note_seq.musicxml_reader import musicxml_file_to_sequence_proto
-from note_seq.musicxml_reader import musicxml_to_sequence_proto
-from note_seq.musicxml_reader import MusicXMLConversionError
+# from note_seq.musicxml_reader import musicxml_file_to_sequence_proto
+# from note_seq.musicxml_reader import musicxml_to_sequence_proto
+# from note_seq.musicxml_reader import MusicXMLConversionError
 
-from note_seq.notebook_utils import play_sequence
-from note_seq.notebook_utils import plot_sequence
+# from note_seq.notebook_utils import play_sequence
+# from note_seq.notebook_utils import plot_sequence
 
-from note_seq.performance_controls import all_performance_control_signals
-from note_seq.performance_controls import NoteDensityPerformanceControlSignal
-from note_seq.performance_controls import PitchHistogramPerformanceControlSignal
+# from note_seq.performance_controls import all_performance_control_signals
+# from note_seq.performance_controls import NoteDensityPerformanceControlSignal
+# from note_seq.performance_controls import PitchHistogramPerformanceControlSignal
 
-from note_seq.performance_encoder_decoder import ModuloPerformanceEventSequenceEncoderDecoder
-from note_seq.performance_encoder_decoder import NotePerformanceEventSequenceEncoderDecoder
-from note_seq.performance_encoder_decoder import PerformanceModuloEncoding
-from note_seq.performance_encoder_decoder import PerformanceOneHotEncoding
+# from note_seq.performance_encoder_decoder import ModuloPerformanceEventSequenceEncoderDecoder
+# from note_seq.performance_encoder_decoder import NotePerformanceEventSequenceEncoderDecoder
+# from note_seq.performance_encoder_decoder import PerformanceModuloEncoding
+# from note_seq.performance_encoder_decoder import PerformanceOneHotEncoding
 
-from note_seq.performance_lib import MetricPerformance
-from note_seq.performance_lib import Performance
-from note_seq.performance_lib import PerformanceEvent
+# from note_seq.performance_lib import MetricPerformance
+# from note_seq.performance_lib import Performance
+# from note_seq.performance_lib import PerformanceEvent
 
-from note_seq.pianoroll_encoder_decoder import PianorollEncoderDecoder
+# from note_seq.pianoroll_encoder_decoder import PianorollEncoderDecoder
 
-from note_seq.pianoroll_lib import PianorollSequence
+# from note_seq.pianoroll_lib import PianorollSequence
+
+# from magenta.note_seq.protobuf import music_pb2
+# from magenta.note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
+# # from note_seq.protobuf import music_pb2
+# # from note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
+
+# from note_seq.sequences_lib import apply_sustain_control_changes
+# from note_seq.sequences_lib import BadTimeSignatureError
+# from note_seq.sequences_lib import concatenate_sequences
+# from note_seq.sequences_lib import extract_subsequence
+# from note_seq.sequences_lib import infer_dense_chords_for_sequence
+# from note_seq.sequences_lib import MultipleTempoError
+# from note_seq.sequences_lib import MultipleTimeSignatureError
+# from note_seq.sequences_lib import NegativeTimeError
+# from note_seq.sequences_lib import quantize_note_sequence
+# from note_seq.sequences_lib import quantize_note_sequence_absolute
+# from note_seq.sequences_lib import quantize_to_step
+# from note_seq.sequences_lib import sequence_to_pianoroll
+# from note_seq.sequences_lib import split_note_sequence
+# from note_seq.sequences_lib import steps_per_bar_in_quantized_sequence
+# from note_seq.sequences_lib import steps_per_quarter_to_steps_per_second
+# from note_seq.sequences_lib import trim_note_sequence
+
+# import note_seq.version
+# from note_seq.version import __version__
+from magenta.note_seq.midi_synth import fluidsynth
+from magenta.note_seq.midi_synth import synthesize
+
+import magenta.note_seq.musicnet_io
+
+from magenta.note_seq.musicxml_parser import MusicXMLDocument
+from magenta.note_seq.musicxml_parser import MusicXMLParseError
+
+from magenta.note_seq.musicxml_reader import musicxml_file_to_sequence_proto
+from magenta.note_seq.musicxml_reader import musicxml_to_sequence_proto
+from magenta.note_seq.musicxml_reader import MusicXMLConversionError
+
+from magenta.note_seq.notebook_utils import play_sequence
+from magenta.note_seq.notebook_utils import plot_sequence
+
+from magenta.note_seq.performance_controls import all_performance_control_signals
+from magenta.note_seq.performance_controls import NoteDensityPerformanceControlSignal
+from magenta.note_seq.performance_controls import PitchHistogramPerformanceControlSignal
+
+from magenta.note_seq.performance_encoder_decoder import ModuloPerformanceEventSequenceEncoderDecoder
+from magenta.note_seq.performance_encoder_decoder import NotePerformanceEventSequenceEncoderDecoder
+from magenta.note_seq.performance_encoder_decoder import PerformanceModuloEncoding
+from magenta.note_seq.performance_encoder_decoder import PerformanceOneHotEncoding
+
+from magenta.note_seq.performance_lib import MetricPerformance
+from magenta.note_seq.performance_lib import Performance
+from magenta.note_seq.performance_lib import PerformanceEvent
+
+from magenta.note_seq.pianoroll_encoder_decoder import PianorollEncoderDecoder
+
+from magenta.note_seq.pianoroll_lib import PianorollSequence
 
 from magenta.note_seq.protobuf import music_pb2
 from magenta.note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
 # from note_seq.protobuf import music_pb2
 # from note_seq.protobuf.music_pb2 import NoteSequence  # pylint:disable=g-importing-member
 
-from note_seq.sequences_lib import apply_sustain_control_changes
-from note_seq.sequences_lib import BadTimeSignatureError
-from note_seq.sequences_lib import concatenate_sequences
-from note_seq.sequences_lib import extract_subsequence
-from note_seq.sequences_lib import infer_dense_chords_for_sequence
-from note_seq.sequences_lib import MultipleTempoError
-from note_seq.sequences_lib import MultipleTimeSignatureError
-from note_seq.sequences_lib import NegativeTimeError
-from note_seq.sequences_lib import quantize_note_sequence
-from note_seq.sequences_lib import quantize_note_sequence_absolute
-from note_seq.sequences_lib import quantize_to_step
-from note_seq.sequences_lib import sequence_to_pianoroll
-from note_seq.sequences_lib import split_note_sequence
-from note_seq.sequences_lib import steps_per_bar_in_quantized_sequence
-from note_seq.sequences_lib import steps_per_quarter_to_steps_per_second
-from note_seq.sequences_lib import trim_note_sequence
+from magenta.note_seq.sequences_lib import apply_sustain_control_changes
+from magenta.note_seq.sequences_lib import BadTimeSignatureError
+from magenta.note_seq.sequences_lib import concatenate_sequences
+from magenta.note_seq.sequences_lib import extract_subsequence
+from magenta.note_seq.sequences_lib import infer_dense_chords_for_sequence
+from magenta.note_seq.sequences_lib import MultipleTempoError
+from magenta.note_seq.sequences_lib import MultipleTimeSignatureError
+from magenta.note_seq.sequences_lib import NegativeTimeError
+from magenta.note_seq.sequences_lib import quantize_note_sequence
+from magenta.note_seq.sequences_lib import quantize_note_sequence_absolute
+from magenta.note_seq.sequences_lib import quantize_to_step
+from magenta.note_seq.sequences_lib import sequence_to_pianoroll
+from magenta.note_seq.sequences_lib import split_note_sequence
+from magenta.note_seq.sequences_lib import steps_per_bar_in_quantized_sequence
+from magenta.note_seq.sequences_lib import steps_per_quarter_to_steps_per_second
+from magenta.note_seq.sequences_lib import trim_note_sequence
 
-import note_seq.version
-from note_seq.version import __version__
+import magenta.note_seq.version
+from magenta.note_seq.version import __version__
