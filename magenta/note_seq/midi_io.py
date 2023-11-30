@@ -25,7 +25,7 @@ import io
 import sys
 from magenta.note_seq import constants
 #from note_seq import constants
-from magenta.note_seq.protobuf import music_pb2
+from magenta.note_seq.protobuf.music_pb2 import NoteSequence
 #from note_seq.protobuf import music_pb2
 import pretty_midi
 
