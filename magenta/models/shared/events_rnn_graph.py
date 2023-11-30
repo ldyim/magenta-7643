@@ -20,7 +20,7 @@ import magenta
 
 import magenta.common
 from magenta.contrib import rnn as contrib_rnn
-import magenta.note_seq
+import magenta.note_seq as note_seq
 import numpy as np
 import tensorflow.compat.v1 as tf
 import tf_slim
@@ -111,10 +111,10 @@ def get_build_graph_fn(mode, config, sequence_example_file_paths=None):
         label_shape = []
       else:
         label_shape = [len(no_event_label)]
+      import pdb; pdb.set_trace()
       inputs, labels, lengths = magenta.common.get_padded_batch(
           sequence_example_file_paths, hparams.batch_size, input_size,
           label_shape=label_shape, shuffle=mode == 'train')
-
     elif mode == 'generate':
       inputs = tf.placeholder(tf.float32, [hparams.batch_size, None,
                                            input_size])
