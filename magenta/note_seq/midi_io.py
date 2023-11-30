@@ -17,12 +17,16 @@
 Input and output wrappers for converting between MIDI and other formats.
 """
 
+import sys
+sys.path.append('/home/ldyim568/temp/magenta/')
+
 import collections
 import io
 import sys
-
-from note_seq import constants
-from note_seq.protobuf import music_pb2
+from magenta.note_seq import constants
+#from note_seq import constants
+from magenta.note_seq import music_pb2
+#from note_seq.protobuf import music_pb2
 import pretty_midi
 
 
@@ -172,7 +176,7 @@ def midi_to_note_sequence_with_chords(midi_data, chord_midi_data):
     note.pitch = midi_note.pitch
     note.velocity = midi_note.velocity
     note.is_drum = is_drum
-    #note.chord = chord
+    note.chord = chord
 
   for program, instrument, is_drum, midi_pitch_bend in midi_pitch_bends:
     pitch_bend = sequence.pitch_bends.add()
