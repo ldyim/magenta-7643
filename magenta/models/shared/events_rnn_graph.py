@@ -111,7 +111,6 @@ def get_build_graph_fn(mode, config, sequence_example_file_paths=None):
         label_shape = []
       else:
         label_shape = [len(no_event_label)]
-      import pdb; pdb.set_trace()
       inputs, labels, lengths = magenta.common.get_padded_batch(
           sequence_example_file_paths, hparams.batch_size, input_size,
           label_shape=label_shape, shuffle=mode == 'train')

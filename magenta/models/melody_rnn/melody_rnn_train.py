@@ -78,11 +78,10 @@ def main(unused_argv):
   run_dir = os.path.expanduser(FLAGS.run_dir)
 
   config = melody_rnn_config_flags.config_from_flags()
-
+  # import pdb; pdb.set_trace()
   mode = 'eval' if FLAGS.eval else 'train'
   print("\n\n config: ", config, "\n\n")
   print("dir(config):", dir(config), "\n\n")
-  import pdb; pdb.set_trace()
   build_graph_fn = events_rnn_graph.get_build_graph_fn(
       mode, config, sequence_example_file_paths)
 

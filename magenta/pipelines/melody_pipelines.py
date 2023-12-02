@@ -14,7 +14,7 @@
 
 """Data processing pipelines for melodies."""
 import sys
-sys.path.append('/home/ldyim568/temp/magenta/')
+sys.path.append('/home/echen0918316/temp/magenta/')
 from magenta.pipelines import pipeline
 from magenta.pipelines import statistics
 from magenta.note_seq import events_lib

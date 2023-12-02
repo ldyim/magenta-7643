@@ -87,7 +87,6 @@ def get_padded_batch(file_list, batch_size, input_size, label_shape=None,
   print("2nd input shape: ", input_tensors[0][1].shape)
   print("3rd input shape: ", input_tensors[0][1].shape)
   print("<--------END-------->\n\n\n\n")
-  return
   if shuffle:
     if num_enqueuing_threads < 2:
       raise ValueError(
